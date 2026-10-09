@@ -7,6 +7,19 @@ description: "FastapiAdmin full-stack dev guide: repo map, run/verify commands, 
 
 在本仓库做任何开发、调试、构建之前，先按本 skill 对齐工程结构与约定，避免跨端改漏、命名错位。
 
+## 0. 本仓库在 ultimateController 中的定位
+
+本仓库（ultimateAdmin）是 ultimateController 设备的 **web portal**：监控告警、版本/OTA、设备管理。产品级需求与规范在**主仓库** `.agents/prompts/`（跨工具共享）：
+
+| Prompt | 内容 |
+| --- | --- |
+| `04_admin_portal.md` | 定位（admin vs uc_agent vs studio）、部署约束（RK3576J 单实例）、工程规范（无魔法数字/常量统一/安全/性能） |
+| `05_admin_monitoring.md` | netdata 风格监控 + 告警（三层指标、数据管道、报警状态机） |
+| `06_admin_ota.md` | 版本可视化 + OTA（签名制品、升级状态机、回滚） |
+| `07_admin_uiux.md` | UI/UX：目标组件库是 `@siemens/ix-vue`（尚未进 package.json）、与 Element Plus 页面级共存、netdata 布局参考 |
+
+写产品功能前先读对应 prompt；本 skill 只覆盖 FastapiAdmin 框架本身的开发约定。与上游 FastapiAdmin 的结构差异（模块布局、命令、迁移）以本 skill 为准，产品行为以主仓库 prompt 为准。
+
 ## 1. 工程地图
 
 | 目录 | 说明 | 技术栈 |

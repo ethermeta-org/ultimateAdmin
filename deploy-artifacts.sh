@@ -19,16 +19,24 @@
 #   ./deploy-artifacts.sh rollback web        # 回滚 Web 到最近一次备份
 #   ./deploy-artifacts.sh rollback app        # 回滚 H5 到最近一次备份
 #
+# 这是 FastapiAdmin 演示站脚本，不是 RK3576J 控制器镜像。
+# 控制器要用单独的 ARM64 配方（SQLite，无默认公网主机，无 root SSH）。
+#
 # 前置条件：
-#   - 本机 SSH 密钥可免密登录 root@$FA_SERVER
+#   - 显式设置 FA_SERVER。没有默认主机。
+#   - 本机 SSH 密钥可登录该演示站（脚本使用 root@$FA_SERVER）
 #   - backend 目标需要本机 docker（Colima / Docker Desktop 均可）
 #   - frontend/web、frontend/app 依赖已安装（pnpm install）
 #
-# 环境变量覆盖：FA_SERVER、FA_REMOTE_ROOT、FA_BACKUP_DIR
+# 环境变量：FA_SERVER（必填）、FA_REMOTE_ROOT、FA_BACKUP_DIR
 # ============================================================================
 set -euo pipefail
 
-SERVER="${FA_SERVER:-8.137.99.5}"
+SERVER="${FA_SERVER:-}"
+if [ -z "$SERVER" ]; then
+  echo "FA_SERVER is required. This script deploys the FastapiAdmin demo station, not the RK3576J controller." >&2
+  exit 1
+fi
 REMOTE_ROOT="${FA_REMOTE_ROOT:-/home/FastapiAdmin}"
 BACKUP_DIR="${FA_BACKUP_DIR:-/home/FastapiAdmin/backups}"
 BACKUP_KEEP="${FA_BACKUP_KEEP:-5}"      # 每个标签最多保留的备份份数

@@ -130,7 +130,7 @@
     "typescript": "~5.5.4",
     "unocss": "66.0.0",
     "unplugin-auto-import": "^0.18.2",
-    "vite": "^5.2.8",
+    "vite": "^6.4.4",
     "vue-tsc": "^2.0.29"
   },
   "pnpm": {

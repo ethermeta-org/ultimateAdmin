@@ -32,6 +32,12 @@ English | [简体中文](./README.md)
 
 </div>
 
+## About ultimateAdmin (this project)
+
+This submodule is **ultimateAdmin**, the device web portal of ultimateController (git submodule; FastAPI + Vue3) — see the module table in the parent repo `README.md`. Local requirements and trimming boundaries for monitoring / versions / OTA live in the parent repo: `.agents/prompts/04_admin_portal.md`, `.agents/prompts/05_admin_monitoring.md`, `.agents/prompts/06_admin_ota.md` (`../.agents/prompts/` relative to this directory).
+
+> Everything below is the upstream FastapiAdmin template text, kept verbatim; trimming for this project follows `.agents/prompts/`. Upstream clone URLs, demo accounts and donation links do not apply to this repo.
+
 ## 🖥️ Screenshots
 
 **Web**

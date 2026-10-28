@@ -32,6 +32,12 @@
 
 </div>
 
+## 关于 ultimateAdmin（本项目）
+
+本子模块是 ultimateController 设备的 web 门户底座 **ultimateAdmin**（git submodule；FastAPI + Vue3），定位见父仓 `README.md` 模块总表。监控 / 版本 / OTA 的本仓需求与裁剪边界以父仓 `.agents/prompts/04_admin_portal.md`、`.agents/prompts/05_admin_monitoring.md`、`.agents/prompts/06_admin_ota.md` 为准（相对本目录为 `../.agents/prompts/`）。
+
+> 以下为上游 FastapiAdmin 模板原文，逐字保留，本项目的裁剪以 `.agents/prompts/` 为准；上游的克隆地址、在线体验账号、打赏等信息均不适用于本仓。
+
 ## 🖥️ 界面一览
 
 **Web 端**
